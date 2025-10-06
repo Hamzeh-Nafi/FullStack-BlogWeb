@@ -14,7 +14,8 @@
     <% data.forEach(file => {%>
         <a href=<%=`/${file}` %>>
             <h2>
-                <%=file %>
+                <!-- for removing the .txt on the name of the blog -->
+                <%=file.slice(0,-4) %>
             </h2>
         </a>
         <% }); %>
