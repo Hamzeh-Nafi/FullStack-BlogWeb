@@ -12,7 +12,7 @@
         <h1>If you want to upload click here !!</h1>
     </a>
     <% data.forEach(file => {%>
-        <a href="">
+        <a href=<%=`/${file}` %>>
             <h2>
                 <%=file %>
             </h2>
