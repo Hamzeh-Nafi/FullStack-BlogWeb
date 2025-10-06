@@ -77,7 +77,9 @@ app.get("/upload", (req, res) => {
     res.render("upload.ejs");
 });
 app.get(/.*\.txt$/, readBLog, (req, res) => {
-    const blogName = req.path;
+    let blogName = req.path;
+    blogName = blogName.slice(1, -4);
+
     res.render("blog-web.ejs", { blogName: blogName, blogContent: req.blogContent });
 });
 // Post requests:
