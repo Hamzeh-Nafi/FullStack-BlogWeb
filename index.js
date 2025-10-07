@@ -51,7 +51,7 @@ function checkFiles(req, res, next) {
         })
 }
 
-function readBLog(req, res, next) {
+function readBlog(req, res, next) {
     readFile(__dirname + "/blog-files" + req.path, 'utf8', (err, data) => {
         if (err) {
             res.send("There was an error");
@@ -76,7 +76,7 @@ app.get("/", getFiles, (req, res) => {
 app.get("/upload", (req, res) => {
     res.render("upload.ejs");
 });
-app.get(/.*\.txt$/, readBLog, (req, res) => {
+app.get(/.*\.txt$/, readBlog, (req, res) => {
     let blogName = req.path;
     blogName = blogName.slice(1, -4);
 
